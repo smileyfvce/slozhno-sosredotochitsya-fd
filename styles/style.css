@@ -2,4 +2,208 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: var(--header-bg-img);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  border-block-end: 1px solid var(--accent-color);
+  border-inline-start: 1px solid var(--accent-color);
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  border-inline-end: 1px solid var(--accent-color);
+  border-block-start: 1px solid var(--accent-color);
+}
+
+.header-decoration {
+  position: absolute;
+  top: 10px;
+  right: 36px;
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  color: var(--accent-color);
+}
+
+.header-decoration::after {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  top: 9px;
+  left: 40px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
+}
+
+.header__theme-menu {
+  display: flex;
+  justify-content: end;
+  margin: 72px 0 65px 0px;
+}
+
+.header__theme-menu-button {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  text-transform: lowercase;
+  border: none;
+  background-color: transparent;
+  color: var(--accent-color);
+}
+
+.header__title {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 83%;
+  margin-block-end: 55px;
+  color: var(--head-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.header__text {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23.4px;
+  justify-self: center;
+  align-self: center;
+  color: var(--bg-color);
+  margin-block-end: 31px;
+  max-width: calc(100% - 20px);
+  max-height: 117px;
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+  background-color: var(--bg-color);
+}
+
+.content-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content-section__title {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23.4px;
+  color: var(--accent-color);
+}
+
+.content-section__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.item__title {
+  display: block;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23.4px;
+  color: var(--bg-color);
+  margin-block-end: 10px;
+}
+.item__text {
+  font-family: var(--font-family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23.4px;
+  color: var(--text-color);
+}
+
+.link-text {
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.slim-text {
+  font-weight: 400;
+}
+
+.content-section-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  background-color: var(--bg-color);
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  height: 667px;
+  margin-block-start: 40px;
+  background-color: var(--bg-color);
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  border-block-end: 1px solid var(--accent-color);
+  border-inline-start: 1px solid var(--accent-color);
+}
+
+.footer::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  height: 25px;
+  border-inline-end: 1px solid var(--accent-color);
+  border-block-start: 1px solid var(--accent-color);
+}
+
+.footer__title {
+  font-family: IBM Plex Mono;
+  font-weight: 700;
+  font-size: 116px;
+  line-height: 83%;
+  letter-spacing: 0%;
+  color: var(--head-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
 }
