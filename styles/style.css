@@ -4,7 +4,8 @@
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  max-width: calc(100% - 20px);
   background-image: var(--header-bg-img);
   background-repeat: no-repeat;
   background-size: cover;
@@ -16,6 +17,7 @@
   position: relative;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
+  max-height: 668px;
 }
 
 .decorated-zone::before {
@@ -43,7 +45,7 @@
 .header-decoration {
   position: absolute;
   top: 10px;
-  right: 36px;
+  right: 38px;
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 18px;
@@ -56,8 +58,8 @@
   position: absolute;
   width: 9px;
   height: 9px;
-  top: 9px;
-  left: 40px;
+  top: 8px;
+  left: 42px;
   border-radius: 50%;
   background-color: var(--accent-color);
   box-shadow: 0px 0px 4px 2px var(--accent-color);
@@ -66,18 +68,20 @@
 .header__theme-menu {
   display: flex;
   justify-content: end;
-  margin: 72px 0 65px 0px;
+  gap: 10px;
+  margin: 69px 10px 65px 0px;
 }
 
 .header__theme-menu-button {
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 18px;
-  line-height: 18px;
+  line-height: 1.8;
   text-transform: lowercase;
   border: none;
   background-color: transparent;
   color: var(--accent-color);
+  padding: 1.5px 13px;
 }
 
 .header__title {
@@ -85,9 +89,10 @@
   font-weight: 700;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
-  margin-block-end: 55px;
   color: var(--head-color);
   text-shadow: 4px 4px 0 var(--accent-color);
+  margin-inline-start: 10px;
+  margin-block-end: 52px;
 }
 
 .header__text {
@@ -95,12 +100,11 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 23.4px;
-  justify-self: center;
-  align-self: center;
   color: var(--bg-color);
-  margin-block-end: 31px;
-  max-width: calc(100% - 20px);
+  margin-inline: 10px;
+  margin-block-end: 66px;
   max-height: 117px;
+
 }
 
 .title-decor {
@@ -110,14 +114,16 @@
 .main {
   display: grid;
   grid-template-columns: 1fr;
+  justify-items: center;
   gap: 50px;
   background-color: var(--bg-color);
+  padding-top: 40px;
+  padding-inline: 10px;
 }
 
 .content-section {
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 
 .content-section__title {
@@ -130,40 +136,62 @@
 
 .content-section__list {
   display: flex;
+  flex-direction: column
+}
+
+.content-section__item {
+  display: flex;
   flex-direction: column;
-  gap: 20px;
+  margin-top: 20px;
 }
 
 .item__title {
-  display: block;
   font-family: var(--font-family);
   font-weight: 700;
   font-size: 18px;
   line-height: 23.4px;
   color: var(--bg-color);
-  margin-block-end: 10px;
 }
+
 .item__text {
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 18px;
   line-height: 23.4px;
   color: var(--text-color);
+  margin-top: 10px;
 }
 
 .link-text {
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
+.item__title-hint {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23.4px;
+  margin-block-start: 20px;
+  color: var(--bg-color);
+}
+
 .slim-text {
   font-weight: 400;
 }
 
-.content-section-gallery {
+.content-section__list-gallery {
   display: grid;
   grid-template-columns: 1fr;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 40px;
   background-color: var(--bg-color);
+}
+
+.content-section__list-image {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .footer {
@@ -171,8 +199,9 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  height: 667px;
-  margin-block-start: 40px;
+  height: 668px;
+  width: 100%;
+  max-width: 375px;
   background-color: var(--bg-color);
 }
 
