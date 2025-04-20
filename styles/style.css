@@ -167,7 +167,7 @@
   display: grid;
   grid-template-columns: 1fr;
   padding-inline: 10px;
-  padding-block-end: 50px;
+  padding-block-end: 49px;
 }
 
 /* стили заголовка секции */
@@ -231,7 +231,7 @@
   font-size: 18px;
   line-height: 23.4px;
   margin-block-start: 20px;
-  color: var(--bg-color);
+  color: var(--text-color-hint);
 }
 
 /* стили заголовка элементов с узким шрифтом*/
@@ -253,7 +253,6 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 10px;
-  padding-block-start: 10px;
 }
 
 /* стили для картинок */
@@ -337,7 +336,7 @@
     padding: 0;
     padding-block-start: 60px;
     padding-block-end: 57px;
-    gap: 60px;
+    gap: 59px;
   }
 
   .content-section {
@@ -379,6 +378,7 @@
     grid-template-rows: 192px 230px 318px;
     gap: 20px;
     max-width: 728px;
+    padding-block-start: 10px;
   }
 
   .sunset {
@@ -432,6 +432,10 @@
     margin: 0;
     margin-block-end: 20px;
     margin-inline-end: 20px;
+  }
+
+  .content-section__title {
+    min-width: 315px;
   }
 
   .content-section:not(:nth-child(2)) {
