@@ -115,9 +115,13 @@
   border: 1px solid #ff0070;
 }
 
-.header__theme-menu-button:focus {
+.header__theme-menu-button:focus-visible {
   outline: none;
   border-block-end: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button_active{
+  pointer-events: none;
 }
 
 /* стили заколовка хедера */

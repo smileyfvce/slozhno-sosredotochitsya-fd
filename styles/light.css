@@ -3,7 +3,6 @@
   Здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
-
 :root.theme-light {
   /* сохраните этот селектор в приведённом виде.
     Так стили написанные ниже будут иметь больший вес,
@@ -18,6 +17,22 @@
   --header-bg-img: url(../images/cover-image-light.png);
 }
 
+.theme-light .header-decoration {
+  display: none;
+}
+
+@media (prefers-color-scheme: light) {
 .theme-light .page {
   /* Вам также нужно будет написать ряд подобных селекторов */
+  --head-color: #ffc2e6;
+  --accent-color: #ff8dcb;
+  --head-text-color: #353430;
+  --text-color: #353430;
+  --text-color-hint: #353430;
+  --bg-color: #fff1f7;
+  --header-bg-img: url(../images/cover-image-light.png);
+}
+.header-decoration {
+  display: none;
+}
 }
