@@ -15,8 +15,8 @@
   position: relative;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  height: 100vh;
-  max-height: 668px;
+  block-size: 100vh;
+  max-block-size: 668px;
   padding-inline: 10px;
 }
 
@@ -27,8 +27,8 @@
   position: absolute;
   bottom: 10px;
   left: 10px;
-  width: 25px;
-  height: 25px;
+  inline-size: 25px;
+  block-size: 25px;
   border-block-end: 1px solid var(--accent-color);
   border-inline-start: 1px solid var(--accent-color);
 }
@@ -38,8 +38,8 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  width: 25px;
-  height: 25px;
+  inline-size: 25px;
+  block-size: 25px;
   border-inline-end: 1px solid var(--accent-color);
   border-block-start: 1px solid var(--accent-color);
 }
@@ -62,8 +62,8 @@
 .header-decoration::after {
   content: "";
   position: absolute;
-  width: 9px;
-  height: 9px;
+  inline-size: 9px;
+  block-size: 9px;
   top: 8px;
   left: 42px;
   border-radius: 50%;
@@ -103,8 +103,8 @@
   color: var(--accent-color);
   cursor: pointer;
   padding-inline: 13px;
-  height: 26px;
-  width: 70px;
+  block-size: 26px;
+  inline-size: 70px;
 }
 
 .header__theme-menu-button:hover {
@@ -115,12 +115,15 @@
   border: 1px solid #ff0070;
 }
 
-.header__theme-menu-button:focus-visible {
+.header__theme-menu-button:focus {
   outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
   border-block-end: 1px solid var(--accent-color);
 }
 
-.header__theme-menu-button_active{
+.header__theme-menu-button_active {
   pointer-events: none;
 }
 
@@ -162,6 +165,7 @@
   flex-direction: column;
   justify-items: center;
   padding-block-start: 40px;
+  padding-block-end: 42px;
   background-color: var(--bg-color);
 }
 
@@ -186,7 +190,7 @@
 
 /* стили элемента секции */
 
-.content-section__item {
+.list__item {
   display: flex;
   flex-direction: column;
   margin-block-start: 20px;
@@ -199,7 +203,7 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 23.4px;
-  margin-bottom: 10px;
+  margin-block-end: 10px;
 }
 
 /* стили текста элемента */
@@ -224,6 +228,10 @@
 }
 
 .link-text:focus {
+  outline: none;
+}
+
+.link-text:focus-visible {
   outline: 1px solid var(--text-color);
 }
 
@@ -263,8 +271,8 @@
 
 .content-section__list-image {
   display: block;
-  width: 100%;
-  height: 100%;
+  inline-size: 100%;
+  block-size: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -277,10 +285,9 @@
   justify-content: center;
   align-items: center;
   background-color: var(--bg-color);
-  height: 100vh;
-  max-height: 668px;
-  width: 100%;
-  padding-block-start: 40px;
+  block-size: 100vh;
+  max-block-size: 668px;
+  inline-size: 100%;
 }
 
 /* стили для заголовка подвала */
@@ -299,7 +306,7 @@
 
 @media (width >= 768px) {
   .header {
-    min-height: 1024px;
+    min-block-size: 1024px;
     padding: 0px;
     padding-inline-end: 21px;
   }
@@ -315,9 +322,9 @@
 
   .header__text {
     justify-self: end;
-    width: 50%;
-    max-width: 364px;
-    max-height: 117px;
+    inline-size: 50%;
+    max-inline-size: 364px;
+    max-block-size: 117px;
     margin-block-start: 163px;
   }
 
@@ -339,7 +346,7 @@
   .main {
     padding: 0;
     padding-block-start: 60px;
-    padding-block-end: 57px;
+    padding-block-end: 60px;
     gap: 59px;
   }
 
@@ -351,12 +358,12 @@
   }
 
   .content-section__title {
-    max-width: 236px;
+    max-inline-size: 236px;
     padding-block-start: 1px;
     margin-block-end: 20px;
   }
 
-  .content-section__item {
+  .list__item {
     margin: 0;
     grid-column: 2;
     margin-block-end: 20px;
@@ -381,7 +388,7 @@
     grid-template-columns: 229px 230px 229px;
     grid-template-rows: 192px 230px 318px;
     gap: 20px;
-    max-width: 728px;
+    max-inline-size: 728px;
     padding-block-start: 10px;
   }
 
@@ -406,7 +413,7 @@
   }
 
   .footer {
-    min-height: 1024px;
+    min-block-size: 1024px;
     padding: 0;
   }
 
@@ -431,7 +438,7 @@
   }
 
   .header__text {
-    max-width: 491px;
+    max-inline-size: 491px;
     align-self: center;
     margin: 0;
     margin-block-end: 20px;
@@ -439,7 +446,7 @@
   }
 
   .content-section__title {
-    min-width: 315px;
+    min-inline-size: 315px;
   }
 
   .content-section:not(:nth-child(2)) {
@@ -455,14 +462,15 @@
     display: flex;
     flex-direction: row;
     column-gap: 20px;
+    justify-content: space-between;
   }
 
-  .concentration .content-section__item {
-    max-width: 315px;
+  .concentration .list__item {
+    max-inline-size: 315px;
   }
 
   .content-section__gallery-item {
-    min-width: 984px;
+    min-inline-size: 984px;
     grid-template-columns: 315px 315px 314px;
     grid-template-rows: 260px 315px 433px;
   }
