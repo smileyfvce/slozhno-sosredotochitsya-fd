@@ -3,10 +3,12 @@
   и их переопределение под различные устройства
 */
 :root {
-  --head-color: #DB00FF;
-  --accent-color: #FF0070;
+  --menu-color: #ff0070;
+  --button-hover-color: #ff007040;
+  --head-color: #db00ff;
+  --accent-color: #ff0070;
   --head-text-color: #ff0070;
-  --text-color: #F1B2CE;
+  --text-color: #f1b2ce;
   --text-color-hint: #000028;
   --bg-color: #000028;
   --font-family: IBM Plex Mono, sans-serif;

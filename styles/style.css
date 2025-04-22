@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   background-image: var(--header-bg-img);
+  background-color: var(--bg-color);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -50,7 +51,7 @@
   position: absolute;
   top: 10px;
   right: 38px;
-  font-family: var(--font-family);
+  font-family: var(--font-family), monospace;
   font-weight: 400;
   font-size: 18px;
   line-height: 25px;
@@ -93,14 +94,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-family);
+  font-family: var(--font-family), monospace;
   font-weight: 400;
   font-size: 18px;
   line-height: 18px;
   text-transform: lowercase;
   border: none;
   background-color: transparent;
-  color: var(--accent-color);
+  color: var(--menu-color);
   cursor: pointer;
   padding-inline: 13px;
   block-size: 26px;
@@ -110,11 +111,11 @@
 /* стили состояний кнопок */
 
 .header__theme-menu-button:hover {
-  border: 1px solid #ff007040;
+  border: 1px solid var(--button-hover-color);
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid #ff0070;
+  border: 1px solid var(--menu-color);
   pointer-events: none;
 }
 
@@ -129,7 +130,7 @@
 /* стили заколовка хедера */
 
 .header__title {
-  font-family: var(--font-family);
+  font-family: var(--font-family), monospace;
   font-weight: 700;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
@@ -141,7 +142,7 @@
 
 .header__text {
   display: block;
-  font-family: var(--font-family);
+  font-family: var(--font-family), monospace;
   font-weight: 700;
   font-size: 18px;
   line-height: 23.4px;
@@ -181,7 +182,7 @@
 /* стили заголовка секции */
 
 .content-section__title {
-  font-family: var(--font-family);
+  font-family: var(--font-family), monospace;
   font-weight: 700;
   font-size: 18px;
   line-height: 23.4px;
@@ -199,7 +200,7 @@
 /* стили заголовка элемента */
 
 .item__title {
-  font-family: var(--font-family);
+  font-family: var(--font-family), monospace;
   font-weight: 700;
   font-size: 18px;
   line-height: 23.4px;
@@ -209,7 +210,7 @@
 /* стили текста элемента */
 
 .item__text {
-  font-family: var(--font-family);
+  font-family: var(--font-family), monospace;
   font-weight: 400;
   font-size: 18px;
   line-height: 23.4px;
@@ -226,7 +227,7 @@
 /* стили состояний ссылок */
 
 .link-text:hover {
-  text-decoration: underline;
+  border-block-end: 1px solid var(--text-color);
 }
 
 .link-text:focus {
@@ -240,7 +241,7 @@
 /* стили дополнительного блока с двойным заголовком */
 
 .list__title-hint {
-  font-family: var(--font-family);
+  font-family: var(--font-family), monospace;
   font-weight: 700;
   font-size: 18px;
   line-height: 23.4px;
@@ -266,7 +267,7 @@
 .content-section__gallery-item {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(calc(100% - 40px) / 3, 1fr));
-  gap: 20px;
+  gap: 10px;
 }
 
 /* стили для картинок */
@@ -295,13 +296,12 @@
 /* стили для заголовка подвала */
 
 .footer__title {
-  font-family: IBM Plex Mono;
+  font-family: var(--font-family), monospace;
   font-weight: 700;
   font-size: 116px;
   line-height: 83%;
-  letter-spacing: 0%;
   color: var(--head-color);
-  text-shadow: 4px 4px 0 var(--accent-color);
+  text-shadow: 2px 2px 0 var(--accent-color);
 }
 
 /* стили для планшета */
@@ -316,18 +316,19 @@
   .header__theme-menu {
     margin: 0px;
     margin-block-start: 190px;
+    margin-block-end: 173px;
   }
 
   .header__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    margin-block-end: 162px;
   }
 
   .header__text {
     justify-self: end;
-    inline-size: 50%;
-    max-inline-size: 364px;
-    max-block-size: 117px;
-    margin-block-start: 163px;
+    margin-block-start: 0;
+    margin-block-end: 183px;
+    margin-inline-start: 384px;
   }
 
   .decorated-zone::before {
@@ -390,6 +391,10 @@
     padding-inline: 20px;
   }
 
+  .content-section__gallery-item {
+    gap: 20px;
+  }
+
   .sunset {
     grid-area: 1 / 1 / 2 / 3;
   }
@@ -432,16 +437,21 @@
     justify-content: center;
     align-items: start;
     margin-block-start: 20px;
+    margin-block-end: 273px;
   }
   .header__theme-menu-list {
     flex-direction: row;
+  }
+
+  .header__title {
+    margin-block-end: 114px;
   }
 
   .header__text {
     max-inline-size: 491px;
     align-self: center;
     margin: 0;
-    margin-block-end: 20px;
+    margin-block-end: 134px;
     margin-inline-end: 20px;
   }
   .content-section {
