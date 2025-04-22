@@ -124,7 +124,7 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--menu-color);
 }
 
 /* стили заколовка хедера */
