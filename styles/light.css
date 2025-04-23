@@ -25,6 +25,8 @@
 
 @media (prefers-color-scheme: light) {
   :root {
+    --menu-color: #353430;
+    --button-hover-color: #32312d66;
     --head-color: #ffc2e6;
     --accent-color: #ff8dcb;
     --head-text-color: #353430;

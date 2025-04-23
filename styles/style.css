@@ -30,8 +30,8 @@
   left: 10px;
   inline-size: 25px;
   block-size: 25px;
-  border-block-end: 1px solid var(--accent-color);
-  border-inline-start: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--menu-color);
+  border-inline-start: 1px solid var(--menu-color);
 }
 
 .decorated-zone::after {
@@ -41,8 +41,8 @@
   right: 10px;
   inline-size: 25px;
   block-size: 25px;
-  border-inline-end: 1px solid var(--accent-color);
-  border-block-start: 1px solid var(--accent-color);
+  border-inline-end: 1px solid var(--menu-color);
+  border-block-start: 1px solid var(--menu-color);
 }
 
 /* стиль REC*/
@@ -166,7 +166,6 @@
   justify-items: center;
   padding-block-start: 40px;
   padding-block-end: 42px;
-  background-color: var(--bg-color);
 }
 
 /* стили секции */
@@ -259,7 +258,6 @@
 
 .content-section__gallery {
   padding-inline: 10px;
-  background-color: var(--bg-color);
 }
 
 /* стили для элемента с картинками*/
@@ -287,7 +285,6 @@
   position: relative;
   justify-content: center;
   align-items: center;
-  background-color: var(--bg-color);
   block-size: 100vh;
   max-block-size: 668px;
   inline-size: 100%;
